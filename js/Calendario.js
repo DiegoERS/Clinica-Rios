@@ -69,9 +69,9 @@ let eventosArreglo=[];
 obtenerCitas();
 
 
-
 //funcion para añadir dias
 function inicioCalendario() {
+    
     //para obtener los dias del mes anterior, del mes actual y del siguiente mes.
     const primerDia = new Date(anio, mes, 1);
     const ultimoDia = new Date(anio, mes + 1, 0);
@@ -498,8 +498,9 @@ function guardarCitas(){
 }
 
 function obtenerCitas(){
-    if (localStorage.getItem("citas" === null)) {
-        return;
+    if (localStorage.getItem("citas" !== null)) {
+        eventosArreglo.push(...JSON.parse(localStorage.getItem("citas")));
     }
-    eventosArreglo.push(...JSON.parse(localStorage.getItem("citas")));
+    
+    return;
 }
