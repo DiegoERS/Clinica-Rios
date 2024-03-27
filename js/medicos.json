@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "edad": 30,
+      "ciudad": "Ciudad de México",
+      "profesion": "Ingeniero"
+    },
+    {
+      "id": 2,
+      "nombre": "María",
+      "edad": 25,
+      "ciudad": "Madrid",
+      "profesion": "Diseñadora"
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos",
+      "edad": 40,
+      "ciudad": "Buenos Aires",
+      "profesion": "Contador"
+    },
+    {
+      "id": 4,
+      "nombre": "Ana",
+      "edad": 35,
+      "ciudad": "Santiago",
+      "profesion": "Abogada"
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro",
+      "edad": 28,
+      "ciudad": "Lima",
+      "profesion": "Médico"
+    }
+  ]
