@@ -36,35 +36,6 @@ const meses = [
     "Noviembre",
     "Diciembre"];
 
-// const eventosArreglo = [
-//     {
-//         dia: 26,
-//         mes: 3,
-//         anio: 2024,
-//         eventos: [
-//             {
-//                 titulo: "evento 1 lorem ipsun dolar sit genfa tersd dsad",
-//                 tiempo: "10:00 AM",
-//             },
-//         ],
-//     },
-//     {
-//         dia: 28,
-//         mes: 3,
-//         anio: 2024,
-//         eventos: [
-//             {
-//                 titulo: "evento 1 lorem ipsun dolar sit genfa tersd dsad",
-//                 tiempo: "10:00 AM",
-//             },
-//             {
-//                 titulo: "evento 2",
-//                 tiempo: "11:00 AM",
-//             },
-//         ],
-//     },
-// ];
-
 let eventosArreglo=[];
 obtenerCitas();
 

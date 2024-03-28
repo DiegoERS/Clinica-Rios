@@ -1,37 +1,91 @@
 [
-    {
-      "id": 1,
-      "nombre": "Juan",
-      "edad": 30,
-      "ciudad": "Ciudad de México",
-      "profesion": "Ingeniero"
-    },
-    {
-      "id": 2,
-      "nombre": "María",
-      "edad": 25,
-      "ciudad": "Madrid",
-      "profesion": "Diseñadora"
-    },
-    {
-      "id": 3,
-      "nombre": "Carlos",
-      "edad": 40,
-      "ciudad": "Buenos Aires",
-      "profesion": "Contador"
-    },
-    {
-      "id": 4,
-      "nombre": "Ana",
-      "edad": 35,
-      "ciudad": "Santiago",
-      "profesion": "Abogada"
-    },
-    {
-      "id": 5,
-      "nombre": "Pedro",
-      "edad": 28,
-      "ciudad": "Lima",
-      "profesion": "Médico"
-    }
-  ]
+  {
+    "nombreCompleto": "Juan Pérez",
+    "identificacion": "01-1234-5678",
+    "especialidad": "Cardiología",
+    "ubicacionConsulta": "Calle Principal #123, Ciudad X",
+    "horariosConsulta": "lunes 8:00am - 12:00pm, miércoles 10:00am - 2:00pm, viernes 2:00pm - 6:00pm",
+    "telefono": "(123) 456-7890",
+    "email": "drjuanperez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "María García",
+        "calificacion": 4,
+        "resena": "Excelente atención, muy profesional."
+      },
+      {
+        "nombrePaciente": "Pedro Martínez",
+        "calificacion": 5,
+        "resena": "El mejor cardiólogo que he conocido."
+      }
+    ],
+    "biografia": "El Dr. Juan Pérez es un reconocido cardiólogo con más de 15 años de experiencia en el tratamiento de enfermedades cardiovasculares."
+  },
+  {
+    "nombreCompleto": "Ana Gutiérrez",
+    "identificacion": "02-2345-6789",
+    "especialidad": "Pediatría",
+    "ubicacionConsulta": "Avenida Central #456, Ciudad Y",
+    "horariosConsulta": "martes 9:00am - 1:00pm, jueves 3:00pm - 7:00pm, sábado 10:00am - 2:00pm",
+    "telefono": "(987) 654-3210",
+    "email": "draanagutierrez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Lucía Martínez",
+        "calificacion": 5,
+        "resena": "Muy amable y paciente con los niños."
+      },
+      {
+        "nombrePaciente": "Alejandro Pérez",
+        "calificacion": 4,
+        "resena": "Explica muy bien y genera confianza."
+      }
+    ],
+    "biografia": "La Dra. Ana Gutiérrez es una pediatra comprometida con el cuidado y bienestar de los niños, con amplia experiencia en el diagnóstico y tratamiento de enfermedades pediátricas."
+  },
+  {
+    "nombreCompleto": "Carlos Rodríguez",
+    "identificacion": "03-3456-7890",
+    "especialidad": "Oftalmología",
+    "ubicacionConsulta": "Calle de los Ojos Felices #789, Ciudad Z",
+    "horariosConsulta": "lunes 1:00pm - 5:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(555) 123-4567",
+    "email": "drcarlosrodriguez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Martín Sánchez",
+        "calificacion": 5,
+        "resena": "Mejoró mi visión considerablemente."
+      },
+      {
+        "nombrePaciente": "Isabel García",
+        "calificacion": 3,
+        "resena": "Buen trato, pero algo impuntual en las citas."
+      }
+    ],
+    "biografia": "El Dr. Carlos Rodríguez es un oftalmólogo altamente calificado, especializado en cirugías oculares y tratamientos para mejorar la visión."
+  },
+  {
+    "nombreCompleto": "Laura Pérez",
+    "identificacion": "04-4567-8901",
+    "especialidad": "Dermatología",
+    "ubicacionConsulta": "Calle Bella Piel #321, Ciudad W",
+    "horariosConsulta": "martes 2:00pm - 6:00pm, jueves 10:00am - 2:00pm, sábado 9:00am - 1:00pm",
+    "telefono": "(777) 987-6543",
+    "email": "drlauraperez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Elena Ramírez",
+        "calificacion": 4,
+        "resena": "Excelentes resultados en mi tratamiento facial."
+      },
+      {
+        "nombrePaciente": "Javier López",
+        "calificacion": 5,
+        "resena": "Atención personalizada y efectiva."
+      }
+    ],
+    "biografia": "La Dra. Laura Pérez es una dermatóloga reconocida por su enfoque integral en el cuidado de la piel y tratamiento de enfermedades dermatológicas."
+  }
+
+]

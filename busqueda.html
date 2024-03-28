@@ -9,6 +9,7 @@
     <title>Inicio de sesion</title><!--es para el nombre de la pestaña-->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/Medicos.css">
     <!-- el rel para que sepa que es css al igual que el type, href para la ruta del archivo-->
      <!--para iconos-->
      <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
@@ -40,7 +41,53 @@
 
     <main>
         <div class="contenido_Sesion">
-            <p>Busqueda de medicos</p>
+            <input type="text" class="Allselect">
+           <div class="Contenedor_botones">
+            <input type="text" class="select input-id">
+            <input type="text" class="select input-Nombre">
+            <input type="text" class="select input-Especialidad">
+            <input type="text" class="select input-ubicacion">
+           </div>
+           <div class="contenedor_tabla">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th class="col">ID</th>
+                    <th class="col">Nombre</th>
+                    <th class="col">Especialidad médica</th>
+                    <th class="col">ubicación</th>
+                    
+                  </tr>
+                </thead>
+                <tbody class="cuerpoTabla">
+                 <!--se carga desde el javascript-->
+                </tbody>
+              </table>
+
+              
+
+           </div>
+           <div class="add-evento-contenedor">
+            <div class="add-evento-header">
+                <div class="titulo">Add event</div>
+                <i class="fas fa-times close"></i>
+            </div>
+            <div class="add-evento-body">
+                <div class="add-evento-input">
+                    <input type="text" placeholder="Nombre evento" class="nombre-evento">
+                </div>
+                <div class="add-evento-input">
+                    <input type="text" placeholder="Tiempo inicio" class="tiempo-inicio">
+                </div>
+                <div class="add-evento-input">
+                    <input type="text" placeholder="Tiempo finalizar" class="tiempo-final">
+                </div>
+            </div>
+            <div class="add-evento-footer">
+                <button class="add-evento-boton">solicitar cita</button>
+            </div>
+        </div>
+
         </div>
         
     </main>
@@ -65,7 +112,7 @@
 
 
 
-   
+   <script src="js/medicos.js"></script>
 
 
 
