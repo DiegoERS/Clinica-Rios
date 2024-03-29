@@ -107,6 +107,28 @@ th,td,tr{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 20px;
+    padding: 20px 20px 100px 20px; 
+    overflow-y: auto;
 }
 
+.add-evento-body::-webkit-scrollbar {
+    display: none;
+}
+
+
+.add-evento-body p{
+    padding: 10px;
+}
+
+.reseña{
+    border-radius: 5px;
+    border: 1px solid #d4d2d2;
+    margin-bottom: 5px;
+}
+
+.btnPaginas{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}

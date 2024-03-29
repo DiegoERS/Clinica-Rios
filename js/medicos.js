@@ -2,6 +2,7 @@
 //a usar para la tabla.
 let arregloDatos = [];
 let medicos = [];
+let datosPaginacion=[];
 
 //variables de interaccion con el html
 const cuerpoTabla = document.querySelector(".cuerpoTabla");
@@ -11,7 +12,18 @@ const inputNombre = document.querySelector(".input-Nombre");
 const inputEspecialidad = document.querySelector(".input-Especialidad");
 const inputUbicacion = document.querySelector(".input-ubicacion");
 const addEventoContainer = document.querySelector(".add-evento-contenedor");
-const addEventoCloseBtn = document.querySelector(".close");
+
+
+const addEventoTitulo=document.querySelector(".add-evento-header");
+const addEventoCuerpo=document.querySelector(".add-evento-input");
+const previousPage=document.querySelector(".fa-chevron-left");
+const nextPage=document.querySelector(".fa-chevron-right");
+
+let limite=2;
+let desde=0;
+let paginas= medicos.length/limite;
+let paginaActiva=1;
+
 
 // Función para cargar y procesar el archivo JSON
 async function cargarJSON() {
@@ -30,11 +42,13 @@ async function cargarJSON() {
     // Almacenar los datos en el arreglo
     arregloDatos = datos;
     medicos = datos;
+    datosPaginacion=datos;
 
     // Mostrar los datos en la consola (opcional)
     console.log(arregloDatos);
     console.log(medicos);
-    cargarDatosATabla();
+    paginacion();
+
 
   } catch (error) {
     console.error('Error:', error);
@@ -68,7 +82,7 @@ function cargarDatosATabla() {
 //funciones paraautocompletado y filtrado
 
 inputID.addEventListener("input", (e) => {
-  console.log("ed");
+  
   inputID.value = inputID.value.replace(/[^0-9-]/g, "");
   if (inputID.value.length === 2) {
     inputID.value += "-";
@@ -140,7 +154,12 @@ function filtracionCompleta() {
     medicos = medicos.filter(dato => dato.ubicacionConsulta.toLowerCase().includes(inputUbicacion.value.toLowerCase()));
   }
 
-  cargarDatosATabla();
+  datosPaginacion=medicos;
+  paginaActiva=1;
+  desde=0;
+
+  console.log(datosPaginacion);
+  paginacion();
 
 }
 
@@ -152,21 +171,23 @@ function cargarlistener(){
     if (indice !== 0) {
       fila.addEventListener("click", function() {
         // Obtener los datos de la fila clicada
-        const nombre = fila.cells[0].textContent;
-        const edad = fila.cells[1].textContent;
+        let id = fila.cells[0].textContent;
+      
 
         // Mostrar los datos en la consola (puedes hacer otra acción aquí)
         //accion modal
-        addEventoContainer.classList.toggle("activo");
-        console.log(addEventoContainer.classList);
+
+        let medico=arregloDatos.find(medico => medico.identificacion === id);
+        crearModal(medico);
+        
+        
       });
     }
   });
 }
 
-addEventoCloseBtn.addEventListener("click", () => {
-  addEventoContainer.classList.remove("activo");
-});
+
+
 
 document.addEventListener("click", (e) => {
   //si se da click fuera
@@ -174,3 +195,65 @@ document.addEventListener("click", (e) => {
       addEventoContainer.classList.remove("activo");
   }
 });
+
+
+function crearModal(medico){
+  let titulo=` <div class="titulo">${medico.nombreCompleto}</div>
+  <i class="fas fa-times close"></i>`;
+
+  addEventoTitulo.innerHTML=titulo;
+
+  const addEventoCloseBtn = document.querySelector(".close");
+  addEventoCloseBtn.addEventListener("click", () => {
+    addEventoContainer.classList.remove("activo");
+  });
+
+  let informacion=`<p>${"Biografía: "+ medico.biografia}</p>
+                  <p>${"Identificación: "+ medico.identificacion}</p>
+                  <p>${"Especialidad médica: "+ medico.especialidad}</p>
+                  <p>${"Ubicación: "+ medico.ubicacionConsulta}</p>
+                  <p>${"Reseñas y calificaciones: "}</p>`;
+
+  medico.reseñasCalificaciones.forEach(resenia => {
+    informacion+=`<div class="reseña"><p>${"Nombre del paciente: "+ resenia.nombrePaciente}</p>
+    <p>${"Calificación: "+ resenia.calificacion}</p>
+    <p>${"Reseña: "+ resenia.resena}</p></div>`;
+  });
+  
+
+
+  addEventoCuerpo.innerHTML=informacion;
+
+
+  addEventoContainer.classList.toggle("activo");
+
+}
+
+
+
+function paginacion() {
+  medicos=datosPaginacion.slice(desde,limite*paginaActiva);
+  console.log(medicos);
+  cargarDatosATabla();
+}
+
+previousPage.addEventListener("click",()=>{
+  paginas= datosPaginacion.length/limite;
+  if(desde>0){
+    desde-=2;
+    paginaActiva--;
+    paginacion();
+    //cargar los datos
+  }
+});
+
+nextPage.addEventListener("click",()=>{
+  paginas= datosPaginacion.length/limite;
+  if(paginaActiva< paginas){
+    desde+=2;
+    paginaActiva++;
+    //cargar los datos
+    paginacion();
+  }
+});
+
