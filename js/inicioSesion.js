@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(pacientes);
         if (paciente) {
             alert("autenticado");
+            guardarInicioSesion(paciente);
             window.location.href = 'citas.html';
         }
 

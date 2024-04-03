@@ -14,8 +14,62 @@ const addEventoBoton = document.querySelector(".add-evento");
 const addEventoContainer = document.querySelector(".add-evento-contenedor");
 const addEventoCloseBtn = document.querySelector(".close");
 const addEventoTitulo = document.querySelector(".nombre-evento");
-const addEventoHoraInicio = document.querySelector(".tiempo-inicio");
-const addEventoHoraFinalizado = document.querySelector(".tiempo-final");
+
+
+const selectDoctores=document.querySelector(".doctores");
+const selectEspecializacion=document.querySelector(".especializacion");
+const selectHorarios=document.querySelector(".Horario");
+let medicos=[];
+
+// Función para cargar y procesar el archivo JSON
+async function cargarJSON() {
+    try {
+      // Obtener el archivo JSON utilizando fetch
+      const response = await fetch('js/medicos.json');
+  
+      // Verificar si la respuesta es exitosa
+      if (!response.ok) {
+        throw new Error('Error al obtener el archivo JSON');
+      }
+  
+      // Obtener los datos del archivo JSON
+      const datos = await response.json();
+  
+      // Almacenar los datos en el arreglo
+      medicos = datos;
+  
+      // Mostrar los datos en la consola (opcional)
+      cargarSelect();
+  
+  
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  
+  // Llamar a la función para cargar y procesar el archivo JSON
+  cargarJSON();
+
+function cargarSelect() {
+    let nombresMedicos="";
+    let especializaciones="";
+    let horarios="";
+    medicos.forEach(medico => {
+        nombresMedicos+=`<option value="${medico.nombreCompleto}">${medico.nombreCompleto}</option>`;
+        especializaciones+=`<option value="${medico.especialidad}">${medico.especialidad}</option>`;
+    });
+
+    for (let index = 7; index < 18; index++) {
+        if (index<10) {
+            horarios+=`<option value="${index}">${"0"+index+ ":00"}</option>`;
+        }else{
+        horarios+=`<option value="${index}">${index+ ":00"}</option>`;
+        }
+    }
+    selectDoctores.innerHTML=nombresMedicos;
+    selectEspecializacion.innerHTML=especializaciones;
+    selectHorarios.innerHTML=horarios;
+}
 
 let hoy = new Date();
 let diaActivo;
@@ -36,9 +90,8 @@ const meses = [
     "Noviembre",
     "Diciembre"];
 
-let eventosArreglo=[];
-obtenerCitas();
-
+let eventosArreglo=obtenerCitas() || [];
+const paciente=extraerInicioSesion();
 
 //funcion para añadir dias
 function inicioCalendario() {
@@ -210,28 +263,6 @@ addEventoTitulo.addEventListener("input", (e) => {
     addEventoTitulo.value = addEventoTitulo.value.slice(0, 50);
 });
 
-//formato de tiempos
-addEventoHoraInicio.addEventListener("input", (e) => {
-    addEventoHoraInicio.value = addEventoHoraInicio.value.replace(/[^0-9:]/g, "");
-    if (addEventoHoraInicio.value.length === 2) {
-        addEventoHoraInicio.value += ":";
-    }
-
-    if (addEventoHoraInicio.value.length > 5) {
-        addEventoHoraInicio.value = addEventoHoraInicio.value.slice(0, 5);
-    }
-});
-
-addEventoHoraFinalizado.addEventListener("input", (e) => {
-    addEventoHoraFinalizado.value = addEventoHoraFinalizado.value.replace(/[^0-9:]/g, "");
-    if (addEventoHoraFinalizado.value.length === 2) {
-        addEventoHoraFinalizado.value += ":";
-    }
-
-    if (addEventoHoraFinalizado.value.length > 5) {
-        addEventoHoraFinalizado.value = addEventoHoraFinalizado.value.slice(0, 5);
-    }
-});
 
 //funciones para añadir citas
 function addListner() {
@@ -314,10 +345,13 @@ function  actualizarEventos(fecha) {
                 <div class="evento">
                     <div class="titulo">
                         <i class="fas fa-circle"></i>
-                        <h3 class="titulo-evento">${evento.titulo}</h3>
+                        <h3 class="titulo-evento">${"Paciente: "+evento.nombrePaciente}</h3>
+                        <h3 class="titulo-evento">${"Médico: "+evento.nombreMedico}</h3>
+                        <h3 class="titulo-evento">${"Tipo de cita: "+evento.especializacionMedico}</h3>
                     </div>
                     <div class="tiempo-evento">
-                        <span class="tiempo-evento">${evento.tiempo}</span>
+                        <span class="tiempo-evento">${"hora de cita: "+evento.horario +":"+ "00"}</span>
+                        <span class="tiempo-evento">${"Estado de la cita: "+ evento.estado}</span>
                     </div>
                 </div>
                 `;
@@ -334,45 +368,33 @@ function  actualizarEventos(fecha) {
     }
 
     contenedorEventos.innerHTML=eventos;
-
-    //salvamos las citas cuando se agrega una nueva
-    guardarCitas();
     
 }
 
 //funcion para añadir citas
 addEventosSubmit.addEventListener("click",()=>{
-    const tituloEvento=addEventoTitulo.value;
-    const horaInicioEvento=addEventoHoraInicio.value;
-    const horaFinalizadoEvento=addEventoHoraFinalizado.value;
+    const nombreMedico=selectDoctores.value;
+    const especializacionMedico=selectEspecializacion.value;
+    const horario=selectHorarios.value;
 
     //algunas validaciones
+    let medico=medicos.some(m => m.nombreCompleto === nombreMedico && m.especialidad === especializacionMedico);
 
-    if (tituloEvento ==="" || horaInicioEvento==="" || horaFinalizadoEvento ==="") {
-        alert("Por favor, rellena todos los espacios correspondientes");
+    if (!medico) {
+        alert("el medico y la especialidad no coincide, por favor verifica que estos datos estén correctos.");
         return;
     }
 
-    const arregloHoraInicio= horaInicioEvento.split(":");
-    const arregloHoraFInalizado= horaFinalizadoEvento.split(":");
-
-    if (arregloHoraInicio.length !== 2 ||
-        arregloHoraFInalizado.length !== 2 ||
-        arregloHoraInicio[0]>23 ||
-        arregloHoraFInalizado[0]> 23||
-        arregloHoraInicio[1]> 59 ||
-        arregloHoraFInalizado[1]>59 ) {
-            alert("formato de hora invalido");
-            return;
-        
-    }
-
-    const tiempoInicio=convertTime(horaInicioEvento);
-    const tiempoFinalizado=convertTime(horaFinalizadoEvento);
 
     const nuevoEvento={
-        titulo: tituloEvento,
-        tiempo: horaInicioEvento +" - " + horaFinalizadoEvento,
+        nombreMedico: nombreMedico,
+        especializacionMedico: especializacionMedico,
+        horario: horario,
+        id_paciente: paciente.cedula,
+        nombrePaciente: paciente.nombre + " "+ paciente.apellido,
+        estado: "pendiente",
+        
+
     };
 
     let eventoAnanido=false;
@@ -385,8 +407,18 @@ addEventosSubmit.addEventListener("click",()=>{
             if(item.dia ===diaActivo &&
                item.mes === mes+1 &&
                item.anio === anio){
-                item.eventos.push(nuevoEvento)
-                //acá valido la hora pero lo hago otro dia para los conflictos de horario
+                let repetido= false;
+
+                item.eventos.forEach(evento => {
+                    if (evento.horario===nuevoEvento.horario) {
+                        repetido=true;
+                    }
+                });
+                if (!repetido) {
+                    item.eventos.push(nuevoEvento);
+                }else{
+                    alert("ya existe una cita asignada a esta hora");
+                }
 
 
 
@@ -409,13 +441,10 @@ addEventosSubmit.addEventListener("click",()=>{
     //removemos el activo
     addEventoContainer.classList.remove("activo");
 
-    //limpiamos los campos
-    addEventoTitulo.value="";
-    addEventoHoraInicio.value="";
-    addEventoHoraFinalizado.value="";
 
     //actualizamos los eventos
     actualizarEventos(diaActivo);
+    guardarCitas(eventosArreglo);
 
     const elementoDiaActivo=document.querySelector(".dia.activo");
     if (!elementoDiaActivo.classList.contains("evento")) {
@@ -423,27 +452,19 @@ addEventosSubmit.addEventListener("click",()=>{
     }
 });
 
-function convertTime(tiempo){
-    let arregloTiempo= tiempo.split(":");
-    let hora=arregloTiempo[0];
-    let minutos=arregloTiempo[1];
-    let formato=hora>=12? "PM":"AM";
-    hora=hora % 12 || 12;
-    tiempo= hora + ":" + minutos+ " "+ formato;
-    return tiempo;
-}
+
 
 //funcion para remover elementos
 contenedorEventos.addEventListener("click", (e)=>{
     if (e.target.classList.contains("evento")) {
-        const tituloEvento= e.target.children[0].children[1].innerHTML;
-
+        const nombrePaciente= e.target.children[0].children[1].innerHTML;
         eventosArreglo.forEach((evento)=>{
            if (evento.dia=== diaActivo &&
             evento.mes === mes+1 &&
             evento.anio === anio){
+                
                 evento.eventos.forEach((item,index)=>{
-                    if (item.titulo === tituloEvento) {
+                    if ( nombrePaciente.includes(item.nombrePaciente)) {
                     evento.eventos.splice(index,1);     
                     }
                 });
@@ -460,18 +481,9 @@ contenedorEventos.addEventListener("click", (e)=>{
             }
         });
         actualizarEventos(diaActivo);
+        guardarCitas(eventosArreglo);
     }
 });
 
-//guardamos las citas en el local storage
-function guardarCitas(){
-    localStorage.setItem("citas", JSON.stringify(eventosArreglo));
-}
 
-function obtenerCitas(){
-    if (localStorage.getItem("citas" !== null)) {
-        eventosArreglo.push(...JSON.parse(localStorage.getItem("citas")));
-    }
-    
-    return;
-}
+
