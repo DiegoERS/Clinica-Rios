@@ -90,6 +90,443 @@
       }
     ],
     "biografia": "La Dra. Laura Pérez es una dermatóloga reconocida por su enfoque integral en el cuidado de la piel y tratamiento de enfermedades dermatológicas."
+  },
+  {
+    "nombreCompleto": "María García",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "05-5678-9012",
+    "especialidad": "Ginecología",
+    "ubicacionConsulta": "Avenida de la Maternidad #789, Ciudad A",
+    "horariosConsulta": "lunes 8:00am - 12:00pm, miércoles 10:00am - 2:00pm, viernes 2:00pm - 6:00pm",
+    "telefono": "(111) 222-3333",
+    "email": "drmariagarcia@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Luisa Martínez",
+        "calificacion": 4,
+        "resena": "Muy profesional y empática."
+      },
+      {
+        "nombrePaciente": "Pedro González",
+        "calificacion": 5,
+        "resena": "Gran experiencia, resuelve todas las dudas."
+      }
+    ],
+    "biografia": "La Dra. María García es una ginecóloga dedicada al cuidado integral de la salud de la mujer, con especial atención en la salud reproductiva."
+  },
+  {
+    "nombreCompleto": "Pedro Sánchez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "06-6789-0123",
+    "especialidad": "Neurología",
+    "ubicacionConsulta": "Calle del Cerebro #456, Ciudad B",
+    "horariosConsulta": "martes 9:00am - 1:00pm, jueves 3:00pm - 7:00pm, sábado 10:00am - 2:00pm",
+    "telefono": "(444) 555-6666",
+    "email": "drpedrosanchez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Manuel López",
+        "calificacion": 5,
+        "resena": "Increíble conocimiento y empatía."
+      },
+      {
+        "nombrePaciente": "Ana Rodríguez",
+        "calificacion": 4,
+        "resena": "Me ayudó mucho con mi condición neurológica."
+      }
+    ],
+    "biografia": "El Dr. Pedro Sánchez es un neurologista con amplia experiencia en el diagnóstico y tratamiento de trastornos neurológicos."
+  },
+  {
+    "nombreCompleto": "Isabel Martínez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "07-7890-1234",
+    "especialidad": "Psiquiatría",
+    "ubicacionConsulta": "Avenida de la Mente #123, Ciudad C",
+    "horariosConsulta": "lunes 1:00pm - 5:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(777) 888-9999",
+    "email": "drisabelmartinez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Carlos Pérez",
+        "calificacion": 4,
+        "resena": "Gran profesional, me ayudó a superar mis problemas."
+      },
+      {
+        "nombrePaciente": "Laura González",
+        "calificacion": 5,
+        "resena": "Muy comprensiva y eficaz en el tratamiento."
+      }
+    ],
+    "biografia": "La Dra. Isabel Martínez es una psiquiatra comprometida con el bienestar mental de sus pacientes, ofreciendo tratamiento integral y apoyo emocional."
+  },
+  {
+    "nombreCompleto": "Daniel López",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "08-8901-2345",
+    "especialidad": "Oncología",
+    "ubicacionConsulta": "Calle de la Esperanza #789, Ciudad D",
+    "horariosConsulta": "martes 2:00pm - 6:00pm, jueves 10:00am - 2:00pm, sábado 9:00am - 1:00pm",
+    "telefono": "(222) 333-4444",
+    "email": "drdaniellopez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "María Sánchez",
+        "calificacion": 5,
+        "resena": "Excelente atención, me ayudó mucho en mi tratamiento."
+      },
+      {
+        "nombrePaciente": "José Rodríguez",
+        "calificacion": 4,
+        "resena": "Muy dedicado y profesional."
+      }
+    ],
+    "biografia": "El Dr. Daniel López es un oncólogo comprometido con el tratamiento integral de pacientes con cáncer, ofreciendo apoyo emocional y terapias personalizadas."
+  },
+  {
+    "nombreCompleto": "Marta Martínez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "09-9012-3456",
+    "especialidad": "Endocrinología",
+    "ubicacionConsulta": "Avenida de la Glándula #456, Ciudad E",
+    "horariosConsulta": "lunes 1:00pm - 5:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(888) 999-0000",
+    "email": "drmartamartinez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Carlos González",
+        "calificacion": 4,
+        "resena": "Me ayudó a controlar mi diabetes de manera efectiva."
+      },
+      {
+        "nombrePaciente": "Ana Pérez",
+        "calificacion": 5,
+        "resena": "Gran conocimiento en trastornos hormonales, excelente atención."
+      }
+    ],
+    "biografia": "La Dra. Marta Martínez es una endocrinóloga dedicada al diagnóstico y tratamiento de trastornos hormonales, con enfoque en mejorar la calidad de vida de sus pacientes."
+  },
+  {
+    "nombreCompleto": "Pablo Rodríguez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "10-0123-4567",
+    "especialidad": "Urología",
+    "ubicacionConsulta": "Calle de la Próstata #123, Ciudad F",
+    "horariosConsulta": "martes 8:00am - 12:00pm, jueves 10:00am - 2:00pm, sábado 2:00pm - 6:00pm",
+    "telefono": "(999) 000-1111",
+    "email": "drpablorodriguez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Lucas Martínez",
+        "calificacion": 5,
+        "resena": "Muy profesional y comprensivo, me ayudó mucho."
+      },
+      {
+        "nombrePaciente": "Elena Sánchez",
+        "calificacion": 4,
+        "resena": "Excelente atención, me sentí muy cómoda durante la consulta."
+      }
+    ],
+    "biografia": "El Dr. Pablo Rodríguez es un urólogo especializado en el tratamiento de enfermedades del sistema urinario, ofreciendo soluciones efectivas y personalizadas a sus pacientes."
+  },
+  {
+    "nombreCompleto": "Sofía García",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "11-1234-5678",
+    "especialidad": "Nutrición",
+    "ubicacionConsulta": "Calle de los Nutrientes #789, Ciudad G",
+    "horariosConsulta": "lunes 2:00pm - 6:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(123) 456-7890",
+    "email": "drsofiagarcia@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Laura Rodríguez",
+        "calificacion": 5,
+        "resena": "Excelente asesoramiento nutricional, me ayudó a mejorar mi salud."
+      },
+      {
+        "nombrePaciente": "David Pérez",
+        "calificacion": 4,
+        "resena": "Muy profesional, explicaciones claras y útiles."
+      }
+    ],
+    "biografia": "La Dra. Sofía García es una nutricionista comprometida con la salud y el bienestar de sus pacientes, ofreciendo asesoramiento personalizado y planes de alimentación adaptados a cada necesidad."
+  },
+  {
+    "nombreCompleto": "Miguel Martínez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "12-2345-6789",
+    "especialidad": "Ortopedia",
+    "ubicacionConsulta": "Avenida de los Huesos #456, Ciudad H",
+    "horariosConsulta": "martes 9:00am - 1:00pm, jueves 3:00pm - 7:00pm, sábado 10:00am - 2:00pm",
+    "telefono": "(987) 654-3210",
+    "email": "drmiguelmartinez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Ana López",
+        "calificacion": 4,
+        "resena": "Excelente atención, me ayudó a recuperarme de mi lesión."
+      },
+      {
+        "nombrePaciente": "Javier Pérez",
+        "calificacion": 5,
+        "resena": "Gran profesional, tratamiento efectivo y seguimiento constante."
+      }
+    ],
+    "biografia": "El Dr. Miguel Martínez es un ortopedista especializado en el diagnóstico y tratamiento de lesiones y trastornos del sistema musculoesquelético, ofreciendo soluciones integrales para mejorar la calidad de vida de sus pacientes."
+  },
+  {
+    "nombreCompleto": "Elena Gutiérrez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "13-3456-7890",
+    "especialidad": "Psicología",
+    "ubicacionConsulta": "Calle de la Mente #123, Ciudad I",
+    "horariosConsulta": "lunes 1:00pm - 5:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(555) 123-4567",
+    "email": "drelenagutierrez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Carlos Martínez",
+        "calificacion": 5,
+        "resena": "Excelente terapeuta, me ayudó a superar mis problemas."
+      },
+      {
+        "nombrePaciente": "Laura Pérez",
+        "calificacion": 4,
+        "resena": "Muy empática y comprensiva, excelente profesional."
+      }
+    ],
+    "biografia": "La Dra. Elena Gutiérrez es una psicóloga especializada en el tratamiento de trastornos mentales y emocionales, ofreciendo terapias individuales y grupales para el bienestar emocional de sus pacientes."
+  },
+  {
+    "nombreCompleto": "Alejandro González",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "14-4567-8901",
+    "especialidad": "Otorrinolaringología",
+    "ubicacionConsulta": "Calle de los Oídos #321, Ciudad J",
+    "horariosConsulta": "martes 2:00pm - 6:00pm, jueves 10:00am - 2:00pm, sábado 9:00am - 1:00pm",
+    "telefono": "(777) 987-6543",
+    "email": "dralejandrogonzalez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "María Martínez",
+        "calificacion": 5,
+        "resena": "Mejoró mi audición significativamente, excelente profesional."
+      },
+      {
+        "nombrePaciente": "Juan Pérez",
+        "calificacion": 4,
+        "resena": "Muy dedicado y atento, lo recomiendo ampliamente."
+      }
+    ],
+    "biografia": "El Dr. Alejandro González es un otorrinolaringólogo especializado en el diagnóstico y tratamiento de trastornos del oído, la nariz y la garganta, brindando soluciones efectivas y personalizadas a sus pacientes."
+  },
+  {
+    "nombreCompleto": "Carmen Sánchez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "15-5678-9012",
+    "especialidad": "Geriatría",
+    "ubicacionConsulta": "Avenida de la Longevidad #789, Ciudad K",
+    "horariosConsulta": "lunes 1:00pm - 5:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(111) 222-3333",
+    "email": "drcarmensanchez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Lucía Rodríguez",
+        "calificacion": 4,
+        "resena": "Muy comprensiva y profesional, excelente trato con los pacientes de la tercera edad."
+      },
+      {
+        "nombrePaciente": "Pedro García",
+        "calificacion": 5,
+        "resena": "Gran conocimiento en el cuidado de personas mayores, la recomiendo completamente."
+      }
+    ],
+    "biografia": "La Dra. Carmen Sánchez es una geriatra comprometida con el bienestar y la calidad de vida de las personas mayores, ofreciendo atención integral y personalizada a sus pacientes."
+  },
+  {
+    "nombreCompleto": "Juan Martínez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "16-6789-0123",
+    "especialidad": "Medicina Interna",
+    "ubicacionConsulta": "Calle de la Salud #456, Ciudad L",
+    "horariosConsulta": "martes 8:00am - 12:00pm, jueves 10:00am - 2:00pm, sábado 2:00pm - 6:00pm",
+    "telefono": "(444) 555-6666",
+    "email": "drjuanmartinez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Elena Rodríguez",
+        "calificacion": 5,
+        "resena": "Excelente médico, muy acertado en el diagnóstico y tratamiento."
+      },
+      {
+        "nombrePaciente": "Andrés Pérez",
+        "calificacion": 4,
+        "resena": "Muy atento y profesional, brinda mucha confianza a sus pacientes."
+      }
+    ],
+    "biografia": "El Dr. Juan Martínez es un médico internista con amplia experiencia en el diagnóstico y tratamiento de enfermedades en adultos, ofreciendo atención integral y seguimiento constante a sus pacientes."
+  },
+  {
+    "nombreCompleto": "Laura García",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "17-8901-2345",
+    "especialidad": "Radiología",
+    "ubicacionConsulta": "Calle de las Imágenes #789, Ciudad M",
+    "horariosConsulta": "lunes 2:00pm - 6:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(222) 333-4444",
+    "email": "drlauragarcia@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Carlos Martínez",
+        "calificacion": 5,
+        "resena": "Gran profesional, interpretó mis estudios con precisión."
+      },
+      {
+        "nombrePaciente": "Sofía Pérez",
+        "calificacion": 4,
+        "resena": "Muy amable y paciente, explicó detalladamente los resultados."
+      }
+    ],
+    "biografia": "La Dra. Laura García es una radióloga con experiencia en interpretación de imágenes médicas, brindando diagnósticos precisos y oportunos a sus pacientes."
+  },
+  {
+    "nombreCompleto": "Diego Rodríguez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "18-9012-3456",
+    "especialidad": "Traumatología",
+    "ubicacionConsulta": "Avenida de los Huesos Rotos #456, Ciudad N",
+    "horariosConsulta": "martes 9:00am - 1:00pm, jueves 3:00pm - 7:00pm, sábado 10:00am - 2:00pm",
+    "telefono": "(888) 999-0000",
+    "email": "drdiegorodriguez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Ana Martínez",
+        "calificacion": 4,
+        "resena": "Muy profesional, me ayudó a recuperarme de mi lesión."
+      },
+      {
+        "nombrePaciente": "Javier Gutiérrez",
+        "calificacion": 5,
+        "resena": "Gran conocimiento en traumatología, tratamiento efectivo."
+      }
+    ],
+    "biografia": "El Dr. Diego Rodríguez es un traumatólogo especializado en el diagnóstico y tratamiento de lesiones musculoesqueléticas, ofreciendo soluciones integrales y rehabilitación personalizada a sus pacientes."
+  },
+  {
+    "nombreCompleto": "María Martínez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "19-0123-4567",
+    "especialidad": "Anestesiología",
+    "ubicacionConsulta": "Calle del Adormecimiento #123, Ciudad O",
+    "horariosConsulta": "martes 8:00am - 12:00pm, jueves 10:00am - 2:00pm, sábado 2:00pm - 6:00pm",
+    "telefono": "(999) 000-1111",
+    "email": "drmariamartinez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Pedro López",
+        "calificacion": 5,
+        "resena": "Excelente atención, me hizo sentir seguro durante la cirugía."
+      },
+      {
+        "nombrePaciente": "Elena Sánchez",
+        "calificacion": 4,
+        "resena": "Muy profesional y atenta, explicó detalladamente el procedimiento."
+      }
+    ],
+    "biografia": "La Dra. María Martínez es una anestesióloga con experiencia en administración de anestesia y cuidados perioperatorios, asegurando la seguridad y comodidad de los pacientes durante los procedimientos quirúrgicos."
+  },
+  {
+    "nombreCompleto": "Luisa Gutiérrez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "20-1234-5678",
+    "especialidad": "Odontología",
+    "ubicacionConsulta": "Calle de las Sonrisas #789, Ciudad P",
+    "horariosConsulta": "lunes 1:00pm - 5:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(111) 222-3333",
+    "email": "drluisagutierrez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Carlos Rodríguez",
+        "calificacion": 5,
+        "resena": "Mejoré mi salud dental significativamente, muy recomendada."
+      },
+      {
+        "nombrePaciente": "Sofía Martínez",
+        "calificacion": 4,
+        "resena": "Excelente atención, muy cuidadosa y profesional."
+      }
+    ],
+    "biografia": "La Dra. Luisa Gutiérrez es una odontóloga con experiencia en diferentes áreas de la odontología, ofreciendo tratamientos integrales y personalizados para el cuidado de la salud bucal de sus pacientes."
+  },
+  {
+    "nombreCompleto": "Pedro Pérez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "21-2345-6789",
+    "especialidad": "Fisioterapia",
+    "ubicacionConsulta": "Avenida de la Rehabilitación #456, Ciudad Q",
+    "horariosConsulta": "martes 2:00pm - 6:00pm, jueves 10:00am - 2:00pm, sábado 9:00am - 1:00pm",
+    "telefono": "(222) 333-4444",
+    "email": "drpedroperez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Ana Rodríguez",
+        "calificacion": 5,
+        "resena": "Excelente fisioterapeuta, me ayudó a recuperarme de mi lesión."
+      },
+      {
+        "nombrePaciente": "Javier Gómez",
+        "calificacion": 4,
+        "resena": "Muy profesional y dedicado, tratamiento efectivo."
+      }
+    ],
+    "biografia": "El Dr. Pedro Pérez es un fisioterapeuta con experiencia en rehabilitación musculoesquelética, ofreciendo tratamientos personalizados y técnicas avanzadas para la recuperación de lesiones y mejorar la calidad de vida de sus pacientes."
+  },
+  {
+    "nombreCompleto": "Ana Gómez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "22-3456-7890",
+    "especialidad": "Reumatología",
+    "ubicacionConsulta": "Calle de las Articulaciones #123, Ciudad R",
+    "horariosConsulta": "martes 8:00am - 12:00pm, jueves 10:00am - 2:00pm, sábado 2:00pm - 6:00pm",
+    "telefono": "(888) 999-0000",
+    "email": "draanagomez@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "Luis Martínez",
+        "calificacion": 4,
+        "resena": "Muy profesional, me ayudó a controlar mis problemas de artritis."
+      },
+      {
+        "nombrePaciente": "María Pérez",
+        "calificacion": 5,
+        "resena": "Gran conocimiento en reumatología, tratamiento efectivo."
+      }
+    ],
+    "biografia": "La Dra. Ana Gómez es una reumatóloga dedicada al diagnóstico y tratamiento de enfermedades reumáticas, ofreciendo opciones terapéuticas avanzadas y cuidado integral a sus pacientes."
+  },
+  {
+    "nombreCompleto": "Juan García",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
+    "identificacion": "23-4567-8901",
+    "especialidad": "Hematología",
+    "ubicacionConsulta": "Avenida de la Sangre #789, Ciudad S",
+    "horariosConsulta": "lunes 1:00pm - 5:00pm, miércoles 9:00am - 1:00pm, viernes 3:00pm - 7:00pm",
+    "telefono": "(999) 000-1111",
+    "email": "drjuangarcia@example.com",
+    "reseñasCalificaciones": [
+      {
+        "nombrePaciente": "María Rodríguez",
+        "calificacion": 5,
+        "resena": "Gran hematología, diagnóstico acertado y tratamiento efectivo."
+      },
+      {
+        "nombrePaciente": "Carlos Pérez",
+        "calificacion": 4,
+        "resena": "Muy profesional, brinda mucha confianza a sus pacientes."
+      }
+    ],
+    "biografia": "El Dr. Juan García es un hematólogo con experiencia en el diagnóstico y tratamiento de trastornos de la sangre, ofreciendo atención especializada y seguimiento continuo a sus pacientes."
   }
 
 ]

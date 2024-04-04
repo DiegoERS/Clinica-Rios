@@ -378,16 +378,16 @@ addEventosSubmit.addEventListener("click",()=>{
     const horario=selectHorarios.value;
 
     //algunas validaciones
-    let medico=medicos.some(m => m.nombreCompleto === nombreMedico && m.especialidad === especializacionMedico);
+    let medico=medicos.find(m => m.nombreCompleto === nombreMedico && m.especialidad === especializacionMedico);
 
     if (!medico) {
         alert("el medico y la especialidad no coincide, por favor verifica que estos datos estén correctos.");
         return;
     }
 
-
     const nuevoEvento={
         nombreMedico: nombreMedico,
+        id_medico:medico.identificacion,
         especializacionMedico: especializacionMedico,
         horario: horario,
         id_paciente: paciente.cedula,

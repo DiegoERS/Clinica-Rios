@@ -19,7 +19,7 @@ const addEventoCuerpo=document.querySelector(".add-evento-input");
 const previousPage=document.querySelector(".fa-chevron-left");
 const nextPage=document.querySelector(".fa-chevron-right");
 
-let limite=2;
+let limite=4;
 let desde=0;
 let paginas= medicos.length/limite;
 let paginaActiva=1;
@@ -240,7 +240,7 @@ function paginacion() {
 previousPage.addEventListener("click",()=>{
   paginas= datosPaginacion.length/limite;
   if(desde>0){
-    desde-=2;
+    desde-=4;
     paginaActiva--;
     paginacion();
     //cargar los datos
@@ -250,7 +250,7 @@ previousPage.addEventListener("click",()=>{
 nextPage.addEventListener("click",()=>{
   paginas= datosPaginacion.length/limite;
   if(paginaActiva< paginas){
-    desde+=2;
+    desde+=4;
     paginaActiva++;
     //cargar los datos
     paginacion();

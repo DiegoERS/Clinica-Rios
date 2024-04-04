@@ -1,6 +1,32 @@
 
-
+let listaMedicos = [];
 //FUNCTIONS
+// Función para cargar y procesar el archivo JSON
+async function cargarJSON() {
+  try {
+    // Obtener el archivo JSON utilizando fetch
+    const response = await fetch('js/medicos.json');
+
+    // Verificar si la respuesta es exitosa
+    if (!response.ok) {
+      throw new Error('Error al obtener el archivo JSON');
+    }
+
+    // Obtener los datos del archivo JSON
+    const datos = await response.json();
+
+    // Almacenar los datos en el arreglo
+    
+    listaMedicos = datos;
+
+    console.log(listaMedicos);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+// Llamar a la función para cargar y procesar el archivo JSON
+cargarJSON();
 
 function guardarStorage(pacientes) {
     const arregloString = JSON.stringify(pacientes);
@@ -39,8 +65,9 @@ function añadirPaciente(paciente) {
 
 function buscarPacientePorCedulaYContraseña(cedulaBuscada, contraseniaBuscada) {
     let pacientes = extraerStorage();
-    console.log("busqueda " + pacientes);
-    if (cedulaBuscada==="01-1234-5678" && contraseniaBuscada==="49e44a56c270d1537333c28d-472e4ff5") {
+    let medico=iniciarSesionMedico(cedulaBuscada, contraseniaBuscada);
+    if (medico) {
+      guardarSesionMedico(medico);
         window.location.href = 'aprobaciónCitas.html';
         return null;
     }
@@ -48,10 +75,29 @@ function buscarPacientePorCedulaYContraseña(cedulaBuscada, contraseniaBuscada) 
     if (pacienteEncontrado && pacienteEncontrado.contrasenia === contraseniaBuscada) {
         return pacienteEncontrado;
     } else {
-       alert("Contraseña incorrecta");
         return null;
     }
 }
+
+function iniciarSesionMedico(cedulaBuscada, contraseniaBuscada) {
+  let medicoEncontrado = listaMedicos.find(listaMedicos => listaMedicos.identificacion === cedulaBuscada);
+  if (medicoEncontrado && medicoEncontrado.contrasenia ===contraseniaBuscada) {
+    return medicoEncontrado;
+  }
+  return null;
+}
+
+function guardarSesionMedico(medico){
+  const arregloMedico = JSON.stringify(medico);
+    localStorage.setItem('MedicoGuardado', arregloMedico);
+}
+
+function extraerSesionMedico() {
+  let arregloStringRecuperado = localStorage.getItem('MedicoGuardado');
+  medico = JSON.parse(arregloStringRecuperado);
+  return medico;
+}
+
 
 function guardarStorageCitas(citas) {
     const arregloCitas = JSON.stringify(citas);
@@ -61,7 +107,6 @@ function guardarStorageCitas(citas) {
 function extraerStorageCitas() {
     let arregloStringRecuperado = localStorage.getItem('citas');
     citas = JSON.parse(arregloStringRecuperado);
-    console.log("storage" + citas);
     return citas;
 }
 

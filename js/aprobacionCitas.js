@@ -15,20 +15,25 @@ const rechazarBtn = document.querySelector(".rechazar");
 function cargarDatosATabla() {
   cuerpoTabla.innerHTML = "";
   let contenido = "";
+  let medico=extraerSesionMedico();
 
   eventosArreglo.forEach((item) => {
 
     item.eventos.forEach(cita => {
-      if (cita.estado === "pendiente") {
-        contenido += ` <tr class="fila">
-            <th>${item.dia + "/" + item.mes + "/" + item.anio}</th>
-            <th>${cita.horario + ":00"}</th>
-            <th>${cita.id_paciente}</th>
-            <th>${cita.nombrePaciente}</th>
-            <th>${cita.nombreMedico}</th>
-            <th>${cita.especializacionMedico}</th>
-          </tr>`;
+      console.log(cita.id_medico +" y "+medico.identificacion);
+      if (cita.id_medico ===medico.identificacion && cita.estado === "pendiente") {
+        
+          contenido += ` <tr class="fila">
+              <th>${item.dia + "/" + item.mes + "/" + item.anio}</th>
+              <th>${cita.horario + ":00"}</th>
+              <th>${cita.id_paciente}</th>
+              <th>${cita.nombrePaciente}</th>
+              <th>${cita.nombreMedico}</th>
+              <th>${cita.especializacionMedico}</th>
+            </tr>`;
+        
       }
+      
     });
   });
 
