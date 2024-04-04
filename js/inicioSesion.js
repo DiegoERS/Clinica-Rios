@@ -1,5 +1,10 @@
-const inputcedula=document.querySelector(".cedula");
-const inputContrasenia=document.querySelector(".contrasenia");
+const inputcedula = document.querySelector(".cedula");
+const inputContrasenia = document.querySelector(".contrasenia");
+
+let intentosFallidos = 0;
+const intentosMaximo = 3; // Número máximo de intentos permitidos
+const tiempoEspera = 30000; // Tiempo de bloqueo en milisegundos (30 segundos en este ejemplo)
+let isBloqueado = false;
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,23 +14,40 @@ document.addEventListener("DOMContentLoaded", () => {
     formulario.addEventListener("submit", (event) => {
         event.preventDefault();
 
+        if (isBloqueado) {
+            alert('El inicio de sesión está bloqueado. Por favor, espere unos momentos antes de intentarlo de nuevo.');
+            return;
+        }
+
         const { cedula, contrasenia } = obtenerDatosFormulario();
 
         const esValido = validarContrasenia(contrasenia) && validarCedula(cedula);
 
-        if (esValido) { 
+        if (esValido) {
 
-        let paciente = buscarPacientePorCedulaYContraseña(cedula, contrasenia);
-            console.log(pacientes);
-        if (paciente) {
-            alert("autenticado");
-            guardarInicioSesion(paciente);
-            window.location.href = 'citas.html';
+            let paciente = buscarPacientePorCedulaYContraseña(cedula, encriptarMD5(contrasenia));
+
+            if (paciente) {
+                alert("autenticado");
+                guardarInicioSesion(paciente);
+                window.location.href = 'citas.html';
+            }else {
+                intentosFallidos++;
+                if (intentosFallidos >= intentosMaximo) {
+                  isBloqueado = true;
+                  setTimeout(() => {
+                    isBloqueado = false;
+                    intentosFallidos = 0; // Reiniciar el contador después del bloqueo
+                  }, tiempoEspera);
+                  alert(`Demasiados intentos fallidos. El inicio de sesión estará bloqueado durante ${tiempoEspera / 1000} segundos.`);
+                } else {
+                  alert('Credenciales incorrectas. Intentos restantes: ' + (intentosMaximo - intentosFallidos));
+                }
+            }
+
+        } else{
+            alert("datos invalidos");
         }
-
-    }else{
-        manejarError();
-    }
     });
 
 
@@ -41,6 +63,7 @@ const manejarError = () => {
 const manejarExito = () => {
     alert("inicio de sesión exitoso");
     limpiarCamposTexto();
+    intentosFallidos=0;
 }
 
 const limpiarCamposTexto = () => {
@@ -84,42 +107,42 @@ const obtenerDatosFormulario = () => {
 
 //formatos validaciones
 
-inputcedula.addEventListener("input", (e)=>{
+inputcedula.addEventListener("input", (e) => {
 
-    inputcedula.value=inputcedula.value.replace(/[^0-9-]/g,"");
-    if(inputcedula.value.length ===2){
-        inputcedula.value+="-";
+    inputcedula.value = inputcedula.value.replace(/[^0-9-]/g, "");
+    if (inputcedula.value.length === 2) {
+        inputcedula.value += "-";
     }
 
-    if(inputcedula.value.length ===7){
-        inputcedula.value+="-";
+    if (inputcedula.value.length === 7) {
+        inputcedula.value += "-";
     }
 
-    if(inputcedula.value.length >12){
-        inputcedula.value=inputcedula.value.slice(0,12);
+    if (inputcedula.value.length > 12) {
+        inputcedula.value = inputcedula.value.slice(0, 12);
     }
 
-    
-    if (e.inputType=== "deleteContentBackward") {
-        if (inputcedula.value.length===3){
-            inputcedula.value=inputcedula.value.slice(0,2);
+
+    if (e.inputType === "deleteContentBackward") {
+        if (inputcedula.value.length === 3) {
+            inputcedula.value = inputcedula.value.slice(0, 2);
         }
 
-        if (inputcedula.value.length===8){
-            inputcedula.value=inputcedula.value.slice(0,7);
+        if (inputcedula.value.length === 8) {
+            inputcedula.value = inputcedula.value.slice(0, 7);
         }
-        
+
     }
 });
 
-inputContrasenia.addEventListener("input", (e)=>{
+inputContrasenia.addEventListener("input", (e) => {
 
 
 
 
-    if(inputContrasenia.value.length >11){
-        inputContrasenia.value=inputContrasenia.value.slice(0,11);
+    if (inputContrasenia.value.length > 11) {
+        inputContrasenia.value = inputContrasenia.value.slice(0, 11);
     }
 
-    
+
 });

@@ -132,3 +132,7 @@ th,td,tr{
     height: 20px;
     margin-left: 5px;
 }
+
+.aceptar, .rechazar{
+    cursor: pointer;
+}

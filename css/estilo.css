@@ -13,6 +13,9 @@ h1 {
     text-decoration: none;
 
 }
+a{
+    text-decoration: none;
+}
 
 .contenido{
    max-width: 1920px;
@@ -159,12 +162,15 @@ footer a:hover {
 }
 
 
+
+
 @media(max-width: 1000px){
     body{
         align-items: flex-start;
         justify-content: flex-start;
     }
 
+    
     .contenido_Sesion{
         min-height: 100vh;
         flex-direction: column;

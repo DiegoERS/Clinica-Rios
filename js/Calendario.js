@@ -339,7 +339,7 @@ function  actualizarEventos(fecha) {
 
         if (fecha===evento.dia && mes+1=== evento.mes && anio===evento.anio) {
             //ver los eventos del documento
-
+           
             evento.eventos.forEach((evento)=>{
                 eventos+=`
                 <div class="evento">

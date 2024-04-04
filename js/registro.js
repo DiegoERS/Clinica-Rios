@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
             && validarCorreo(correo) && validarContrasenia(contrasenia, confirmacion);
 
         if (esValido) {
-
+            let contraseniaEncriptada=encriptarMD5(contrasenia);
             let nuevoPaciente = [{
                 "cedula": cedula,
                 "nombre": nombre,
                 "apellido": apellido,
                 "celular": celular,
                 "correo": correo,
-                "contrasenia": contrasenia
+                "contrasenia": contraseniaEncriptada
             }];
 
             const mensaje=añadirPaciente(nuevoPaciente);

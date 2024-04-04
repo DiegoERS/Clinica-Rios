@@ -1,6 +1,7 @@
 [
   {
     "nombreCompleto": "Juan Pérez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
     "identificacion": "01-1234-5678",
     "especialidad": "Cardiología",
     "ubicacionConsulta": "Calle Principal #123, Ciudad X",
@@ -23,6 +24,7 @@
   },
   {
     "nombreCompleto": "Ana Gutiérrez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
     "identificacion": "02-2345-6789",
     "especialidad": "Pediatría",
     "ubicacionConsulta": "Avenida Central #456, Ciudad Y",
@@ -45,6 +47,7 @@
   },
   {
     "nombreCompleto": "Carlos Rodríguez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
     "identificacion": "03-3456-7890",
     "especialidad": "Oftalmología",
     "ubicacionConsulta": "Calle de los Ojos Felices #789, Ciudad Z",
@@ -67,6 +70,7 @@
   },
   {
     "nombreCompleto": "Laura Pérez",
+    "contrasenia": "49e44a56c270d1537333c28d-472e4ff5",
     "identificacion": "04-4567-8901",
     "especialidad": "Dermatología",
     "ubicacionConsulta": "Calle Bella Piel #321, Ciudad W",
