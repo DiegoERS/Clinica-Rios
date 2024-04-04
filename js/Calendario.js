@@ -458,14 +458,21 @@ addEventosSubmit.addEventListener("click",()=>{
 contenedorEventos.addEventListener("click", (e)=>{
     if (e.target.classList.contains("evento")) {
         const nombrePaciente= e.target.children[0].children[1].innerHTML;
+        const nombreMedico= e.target.children[0].children[2].innerHTML;
+        console.log(nombreMedico);
         eventosArreglo.forEach((evento)=>{
            if (evento.dia=== diaActivo &&
             evento.mes === mes+1 &&
             evento.anio === anio){
                 
                 evento.eventos.forEach((item,index)=>{
-                    if ( nombrePaciente.includes(item.nombrePaciente)) {
-                    evento.eventos.splice(index,1);     
+                    if ( nombrePaciente.includes(item.nombrePaciente) && nombreMedico.includes(item.nombreMedico)) {
+                        if ((paciente.nombre + " "+ paciente.apellido)=== item.nombrePaciente) {
+                            evento.eventos.splice(index,1);     
+                        }else{
+                            alert("no puedes eliminar las citas de otros pacientes.");
+                        }
+                    
                     }
                 });
                 // si no hay eventos para remover
