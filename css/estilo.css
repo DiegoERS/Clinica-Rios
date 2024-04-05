@@ -50,6 +50,10 @@ a{
     padding: 10px;
 }
 
+.tabla_aprobacion{
+    margin: 150px 0;
+}
+
 .container_corazon {
     display: flex;
     flex: 1;
@@ -66,7 +70,7 @@ a{
 
 .corazon {
     display: flex;
-    width: 100%;
+    width: 90%;
     font-size: 30em;
     color: red;
     justify-content: center;

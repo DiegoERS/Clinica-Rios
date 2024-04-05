@@ -1,9 +1,11 @@
+
 .contenido_Sesion{
 
     display: flex;
     flex-direction: column;
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
 }
 
 .Allselect{
@@ -12,13 +14,9 @@
 
 }
 
-.Contenedor_botones{
-    display: flex;
-
-    width: 80%;
-    margin-bottom: 30px;
-    padding-left:50px;
-    gap: 180px;
+.contenedor_input_general{
+    width: 100%;
+    text-align: end;
 }
 .select{
     width: 120px;
@@ -28,32 +26,64 @@
 
 .contenedor_tabla{
     width: 100%;
-    height: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-
+    overflow-x: auto;
+    padding: 20px;
+  
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 
 .table{
-    width: 80%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #000;
+    width: 100%;
+
+
     border-collapse: collapse;
+    margin: 20px;
+
+   
+    font-family: sans-serif;
+    color: #404148;
     
 }
-th,td,tr{
-    border: 1px solid #000;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    
+.table input, .contenedor_input_general input{
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    font-size: 15px;
+    border: 1px solid rgb(212, 212, 212);
+    background-color: #f2f7ff;
+    color: #798dbb;
 }
+
+.table thead input:focus, .contenedor_input_general input:focus{
+    outline: none;
+    border: 1px solid #86b7fe;
+    box-shadow: 0px 0px 0px 3px #c2dbfe;
+}
+
+.table thead input::placeholder, .contenedor_input_general input::placeholder {
+    color: #798dbb;
+}
+
+.table th ,td{
+    text-align: left;
+    padding: 20px;
+}
+.table tbody tr:nth-child(odd) {
+    background-color: #e8edf5;
+}
+.table tr{
+border: none;
+
+}
+
+
 .fila:hover:hover{
-    background-color: beige;
+    background-color: #cbcfd8;
     cursor: pointer;
 }
 
@@ -128,11 +158,26 @@ th,td,tr{
 
 .btnPaginas{
     display: flex;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 10px;
+    justify-content: start;
 }
 
 .aceptar, .rechazar{
     cursor: pointer;
+}
+
+.netx-page{
+    padding: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    transition: 1s ease ;
+}
+
+.netx-page:hover{
+    transform: scale(1.1);
+    background-color: rgb(0, 178, 178);
+    color: white;
 }

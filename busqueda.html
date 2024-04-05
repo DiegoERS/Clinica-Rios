@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/Medicos.css">
     <!-- el rel para que sepa que es css al igual que el type, href para la ruta del archivo-->
-     <!--para iconos-->
-     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <!--para iconos-->
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
 
 
@@ -22,14 +22,14 @@
 
 <body>
     <header>
-        <h1 ><a href="index.html">Clínica Árbol de seda</a></h1> <!--titulos, h1,h2,h3,h4,h5,h6-->
+        <h1><a href="index.html">Clínica Árbol de seda</a></h1> <!--titulos, h1,h2,h3,h4,h5,h6-->
         <nav>
             <ul>
                 <li><a href="inicioSesion.html">Registro/Inicio de sesión</a></li>
                 <li><a href="busqueda.html">Búsqueda de médicos</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="nosotros.html">Sobre nosotros</a></li>
-            
+
 
 
             </ul>
@@ -41,63 +41,72 @@
 
     <main>
         <div class="contenido_Sesion">
-            <input type="text" class="Allselect">
-           <div class="Contenedor_botones">
-            <input type="text" class="select input-id">
-            <input type="text" class="select input-Nombre">
-            <input type="text" class="select input-Especialidad">
-            <input type="text" class="select input-ubicacion">
+            <div class="contenedor_input_general">
+                <input type="text" class="Allselect" placeholder="Filtro general">
+            </div>
+            
+            <div class="contenedor_tabla">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col">ID</th>
+                            <th class="col">Nombre</th>
+                            <th class="col">Especialidad médica</th>
+                            <th class="col">Ubicación</th>
+
+                        </tr>
+                        <tr>
+                            <th><input type="text" class="select input-id"></th>
+                            <th><input type="text" class="select input-Nombre"></th>
+                            <th><input type="text" class="select input-Especialidad"></th>
+                            <th><input type="text" class="select input-ubicacion"></th>
+                            
+                            
+                            
+                            
+                        </tr>
+                    </thead>
+                    <tbody class="cuerpoTabla">
+                        <!--se carga desde el javascript-->
+                    </tbody>
+                </table>
+
+
+
+            </div>
             <div class="btnPaginas">
                 <button class="netx-page"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="netx-page"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
-           </div>
-           <div class="contenedor_tabla">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th class="col">ID</th>
-                    <th class="col">Nombre</th>
-                    <th class="col">Especialidad médica</th>
-                    <th class="col">ubicación</th>
-                    
-                  </tr>
-                </thead>
-                <tbody class="cuerpoTabla">
-                 <!--se carga desde el javascript-->
-                </tbody>
-              </table>
+            <div class="add-evento-contenedor">
+                <div class="add-evento-header">
 
-              
 
-           </div>
-           <div class="add-evento-contenedor">
-            <div class="add-evento-header">
 
-                
-                
-            </div>
-            <div class="add-evento-body">
-                <div class="add-evento-input">
-                   
                 </div>
-               
-                
+                <div class="add-evento-body">
+                    <div class="add-evento-input">
+
+                    </div>
+
+
+                </div>
+
             </div>
-        
-        </div>
 
         </div>
-        
+
     </main>
     <footer>
         <p>Más información sobre nosotros.</p>
 
         <div>
-            
+
             <a href="preguntas.html">Preguntas frecuentes</a>
             <a href="contacto.html">Información de contacto</a>
-            <a href="js/Política de Privacidad clinica.pdf" download="Clinica Árbol de seda (Politica de privacidad y términos de uso).pdf">Politica de privacidad y términos de uso</a>
+            <a href="js/Política de Privacidad clinica.pdf"
+                download="Clinica Árbol de seda (Politica de privacidad y términos de uso).pdf">Politica de privacidad y
+                términos de uso</a>
 
 
         </div>
@@ -109,7 +118,7 @@
 
 
 
-   <script src="js/medicos.js"></script>
+    <script src="js/medicos.js?43"></script>
 
 
 
