@@ -20,7 +20,6 @@ function cargarDatosATabla() {
   eventosArreglo.forEach((item) => {
 
     item.eventos.forEach(cita => {
-      console.log(cita.id_medico +" y "+medico.identificacion);
       if (cita.id_medico ===medico.identificacion && cita.estado === "pendiente") {
         
           contenido += ` <tr class="fila">
@@ -141,6 +140,8 @@ function aceptarCita(fecha,citaObtenida) {
          evento.eventos.forEach((cita)=>{
              if ( (cita.horario + ":00") === (citaObtenida.horario+":00") && cita.id_paciente === citaObtenida.id_paciente) {
              cita.estado="Aceptada";
+             let correo=obtenerCorreoPaciente(citaObtenida.id_paciente);
+              enviarCorreo(correo, fecha, citaObtenida.horario);
              }
          });
 
@@ -172,4 +173,32 @@ function rechazarCita(fecha,citaObtenida) {
  cargarDatosATabla();
  guardarCitas(eventosArreglo);
 
+}
+
+
+//funciones correo
+(function() {
+  emailjs.init('4AfLe6P6nuHxSQ-Na');
+})();
+
+
+function enviarCorreo(correo,fecha, hora) {
+  // ID de la plantilla de correo electrónico creada en EmailJS
+const templateId = 'template_jz30u5a';
+
+// Datos a rellenar en la plantilla del correo electrónico
+const emailParams = {
+  to_name: correo,
+  from_name: 'Clínica arbol de seda',
+  message: 'El médico ha cofirmado tu cita.\n Este correo es un recordatorio de tu cita con el medico: '+medico.nombreCompleto+'. \n La cual fue solicitada para la fecha'+ fecha 
+  +'. \n Y la hora establecida fue: ' + hora + ':00, \n!Esperamos tenga un buen dia!'
+};
+
+// Enviar el correo electrónico
+emailjs.send('service_f0jg7s7', templateId, emailParams)
+  .then(function(response) {
+    console.log('Correo electrónico enviado correctamente:', response);
+  }, function(error) {
+    console.error('Error al enviar el correo electrónico:', error);
+  });
 }

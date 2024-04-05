@@ -63,14 +63,14 @@ function añadirPaciente(paciente) {
 
 function cambiarContraseniaPaciente(pacientecambio) {
   let pacientesObtenidos = extraerStorage() || [];
-  let hecho=false;
+  let hecho = false;
   pacientesObtenidos.forEach(paciente => {
 
     if (paciente.cedula === pacientecambio[0].cedula && paciente.correo.toLowerCase() === pacientecambio[0].correo.toLowerCase()
       && paciente.celular === pacientecambio[0].celular) {
       paciente.contrasenia = pacientecambio[0].contrasenia;
       guardarStorage(pacientesObtenidos);
-      hecho= true;
+      hecho = true;
     }
 
   });
@@ -80,6 +80,16 @@ function cambiarContraseniaPaciente(pacientecambio) {
   return hecho;
 }
 
+function obtenerCorreoPaciente(cedula) {
+  let pacientesObtenidos = extraerStorage() || [];
+  let correo = "";
+  pacientesObtenidos.forEach(paciente => {
+    if (paciente.cedula === cedula) {
+      correo = paciente.correo;
+    }
+  });
+  return correo;
+}
 
 
 function buscarPacientePorCedulaYContraseña(cedulaBuscada, contraseniaBuscada) {
