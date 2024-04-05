@@ -233,7 +233,6 @@ function crearModal(medico){
 
 function paginacion() {
   medicos=datosPaginacion.slice(desde,limite*paginaActiva);
-  console.log(medicos);
   cargarDatosATabla();
 }
 
@@ -255,5 +254,28 @@ nextPage.addEventListener("click",()=>{
     //cargar los datos
     paginacion();
   }
+});
+
+  // Función para ordenar por propiedad
+  function ordenarArreglo(propiedad) {
+    return function(a, b) {
+        if (a[propiedad] > b[propiedad]) {
+            return 1;
+        } else if (a[propiedad] < b[propiedad]) {
+            return -1;
+        } else {
+            return 0;
+        }
+    };
+}
+
+document.getElementById('ordenamiento').addEventListener('change', function() {
+  var propiedad = this.value;
+  if (propiedad=== "") {
+    return;
+  }
+  console.log(propiedad);
+  datosPaginacion=datosPaginacion.sort(ordenarArreglo(propiedad));
+  paginacion();
 });
 

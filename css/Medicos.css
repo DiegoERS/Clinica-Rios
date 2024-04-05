@@ -18,6 +18,11 @@
     width: 100%;
     text-align: end;
 }
+
+.contenedor_ordenar{
+    width: 20%;
+    text-align: start;
+}
 .select{
     width: 120px;
     border-radius: 5px;
