@@ -40,9 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     intentosFallidos = 0; // Reiniciar el contador después del bloqueo
                   }, tiempoEspera);
                   alert(`Demasiados intentos fallidos. El inicio de sesión estará bloqueado durante ${tiempoEspera / 1000} segundos.`);
-                } else {
-                  alert('Credenciales incorrectas. Intentos restantes: ' + (intentosMaximo - intentosFallidos));
-                }
+                } 
             }
 
         } else{
