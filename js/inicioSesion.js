@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let paciente = buscarPacientePorCedulaYContraseña(cedula, encriptarMD5(contrasenia));
 
             if (paciente) {
-                alert("autenticado");
+                alert("Paciente autenticado");
                 guardarInicioSesion(paciente);
                 window.location.href = 'citas.html';
             }else {
