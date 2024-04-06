@@ -19,6 +19,7 @@ const addEventoCuerpo=document.querySelector(".add-evento-input");
 const previousPage=document.querySelector(".fa-chevron-left");
 const nextPage=document.querySelector(".fa-chevron-right");
 
+//variables de paginacion
 let limite=4;
 let desde=0;
 let paginas= medicos.length/limite;
@@ -129,7 +130,8 @@ inputGeneral.addEventListener("input", () => {
   filtracionCompleta();
 });
 
-
+//funcion que hace el filtro completo, toma en cuenta todos los inputs que son filtros y deja el arreglo que se debe despues de pasar
+// por todos los filtros.
 function filtracionCompleta() {
   medicos = arregloDatos;
 
@@ -158,11 +160,11 @@ function filtracionCompleta() {
   paginaActiva=1;
   desde=0;
 
-  console.log(datosPaginacion);
   paginacion();
 
 }
 
+//carga los listeners de cada fila para la funcion del modal.
 function cargarlistener(){
   const filas = document.querySelectorAll(".table tr");
    // Agregar evento de clic a cada fila
@@ -190,13 +192,14 @@ function cargarlistener(){
 
 
 document.addEventListener("click", (e) => {
-  //si se da click fuera
+  //si se da click fuera del modal
   if ( addEventoContainer.contains(e.target)) {
       addEventoContainer.classList.remove("activo");
   }
 });
 
 
+//funcion que crea el modal segun los datos del medico
 function crearModal(medico){
   let titulo=` <div class="titulo">${medico.nombreCompleto}</div>
   <i class="fas fa-times close"></i>`;
@@ -230,12 +233,13 @@ function crearModal(medico){
 }
 
 
-
+//funcion que hace el recorte del arreglo filtrado y lo carga a la tabla
 function paginacion() {
   medicos=datosPaginacion.slice(desde,limite*paginaActiva);
   cargarDatosATabla();
 }
 
+//listeners para los cambios de pagina 
 previousPage.addEventListener("click",()=>{
   paginas= datosPaginacion.length/limite;
   if(desde>0){
@@ -269,6 +273,7 @@ nextPage.addEventListener("click",()=>{
     };
 }
 
+//listener para detectar el cambio al select de orden
 document.getElementById('ordenamiento').addEventListener('change', function() {
   var propiedad = this.value;
   if (propiedad=== "") {

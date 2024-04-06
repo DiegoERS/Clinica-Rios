@@ -1,3 +1,4 @@
+//variables de interaccion con el html.
 inputcedula=document.querySelector(".cedula");
 inputContrasenia=document.querySelector(".contrasenia");
 inputConfirmacion=document.querySelector(".confirmacion");
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const esValido = validarCedula(cedula) && validarNombre(nombre) && validarApellido(apellido) && validarCelular(celular)
             && validarCorreo(correo) && validarContrasenia(contrasenia, confirmacion);
 
+            //si todos los formatos son validos
         if (esValido) {
             let contraseniaEncriptada=encriptarMD5(contrasenia);
             let nuevoPaciente = [{
@@ -52,23 +54,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 }); //para que escuche a todo el documento y el metodo con la flecha es una funcion flecha que sea anonima
 
+//funcion en caso de que el formato sea invalido
 const manejarError = () => {
     alert("datos invalidos");
 }
 
+//funcion en caso de que se registre correctamente
 const manejarExito = () => {
     alert("Registro exitoso");
     limpiarCamposTexto();
 }
 
-
+//vacia los inputs
 const limpiarCamposTexto = () => {
     const campos = document.querySelectorAll("#formulario input[type='password'],#formulario input[type='email'],#formulario input[type='text']");
     campos.forEach((campo) => campo.value = "");
 
 };
 
-
+//obtiene los datos de los inputs
 const obtenerDatosFormulario = () => {
 
     const cedula = document.getElementById("cedula").value.trim();
@@ -84,6 +88,9 @@ const obtenerDatosFormulario = () => {
 
 };
 
+/*
+VALIDACIONES DE FORMATO
+*/
 const validarCedula = (cedula) => {
     var regexCedula = /^\d{2}-\d{4}-\d{4}$/;
 

@@ -1,6 +1,8 @@
+//constantes para la interaccion con el html
 const inputcedula = document.querySelector(".cedula");
 const inputContrasenia = document.querySelector(".contrasenia");
 
+//variables para los intentos fallidos.
 let intentosFallidos = 0;
 const intentosMaximo = 3; // Número máximo de intentos permitidos
 const tiempoEspera = 30000; // Tiempo de bloqueo en milisegundos (30 segundos en este ejemplo)
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const esValido = validarContrasenia(contrasenia) && validarCedula(cedula);
 
+        //si el formato es correcto 
         if (esValido) {
 
             let paciente = buscarPacientePorCedulaYContraseña(cedula, encriptarMD5(contrasenia));
@@ -31,19 +34,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Paciente autenticado");
                 guardarInicioSesion(paciente);
                 window.location.href = 'citas.html';
-            }else {
+            } else {
                 intentosFallidos++;
                 if (intentosFallidos >= intentosMaximo) {
-                  isBloqueado = true;
-                  setTimeout(() => {
-                    isBloqueado = false;
-                    intentosFallidos = 0; // Reiniciar el contador después del bloqueo
-                  }, tiempoEspera);
-                  alert(`Demasiados intentos fallidos. El inicio de sesión estará bloqueado durante ${tiempoEspera / 1000} segundos.`);
-                } 
+                    isBloqueado = true;
+                    setTimeout(() => {
+                        isBloqueado = false;
+                        intentosFallidos = 0; // Reiniciar el contador después del bloqueo
+                    }, tiempoEspera);
+                    alert(`Demasiados intentos fallidos. El inicio de sesión estará bloqueado durante ${tiempoEspera / 1000} segundos.`);
+                }
             }
 
-        } else{
+        } else {
             alert("datos invalidos");
         }
     });
@@ -53,23 +56,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 }); //para que escuche a todo el documento y el metodo con la flecha es una funcion flecha que sea anonima
 
-
+//en caso de que haya un mal formato
 const manejarError = () => {
     alert("datos invalidos");
 }
 
+//en caso de que los datos coincidan
 const manejarExito = () => {
     alert("inicio de sesión exitoso");
     limpiarCamposTexto();
-    intentosFallidos=0;
+    intentosFallidos = 0;
 }
 
+//limpia todos los campos de texto
 const limpiarCamposTexto = () => {
     const campos = document.querySelectorAll("#formulario input[type='password'],#formulario input[type='text']");
     campos.forEach((campo) => campo.value = "");
 
 };
 
+/*
+VALIDACIONES DE FORMATO
+*/
 const validarCedula = (cedula) => {
     var regexCedula = /^\d{2}-\d{4}-\d{4}$/;
 
@@ -94,6 +102,7 @@ const validarContrasenia = (contrasenia) => {
     }
 }
 
+//obtiene los datos de los inputs.
 const obtenerDatosFormulario = () => {
 
     const cedula = document.getElementById("cedula").value.trim();
@@ -103,7 +112,7 @@ const obtenerDatosFormulario = () => {
 
 };
 
-//formatos validaciones
+//formatos validaciones en linea
 
 inputcedula.addEventListener("input", (e) => {
 

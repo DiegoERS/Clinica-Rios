@@ -345,6 +345,7 @@ function obtenerDiaActivo(fecha) {
 
 }
 
+// Es la función con la que se carga las citas al calendario dependiendo de la fecha en la que se seleccione
 function actualizarEventos(fecha) {
     let eventos = "";
     eventosArreglo.forEach((evento) => {

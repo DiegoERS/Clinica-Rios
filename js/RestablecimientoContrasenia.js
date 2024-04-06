@@ -1,3 +1,4 @@
+//constantes para la interaccion con el html
 inputcedula=document.querySelector(".cedula");
 inputCelular=document.querySelector(".celular");
 inputContrasenia=document.querySelector(".contrasenia");
@@ -43,24 +44,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+//en caso de que el formato sea invalido
 const manejarError = () => {
     alert("datos invalidos");
 }
-
+// en caso de que todo se cumpla, se restablece la contraseña
 const manejarExito = () => {
     alert("Restablecimiento de contraseña exitoso");
     window.location.href = 'inicioSesion.html';
     limpiarCamposTexto();
 }
 
+//funcion que limpia los inputs
 const limpiarCamposTexto = () => {
     const campos = document.querySelectorAll("#formulario input[type='password'],#formulario input[type='email'],#formulario input[type='text']");
     campos.forEach((campo) => campo.value = "");
 
 };
 
-
+//obtiene los datos del formulario
 const obtenerDatosFormulario = () => {
 
     const cedula = document.getElementById("cedula").value.trim();
@@ -73,6 +75,8 @@ const obtenerDatosFormulario = () => {
 
 
 };
+
+//validaciones de formato
 
 const validarCedula = (cedula) => {
     var regexCedula = /^\d{2}-\d{4}-\d{4}$/;
@@ -122,7 +126,7 @@ const validarCorreo = (correo) => {
 
 }
 
-//formatos validaciones
+//formatos validaciones en linea
 
 inputcedula.addEventListener("input", (e)=>{
 

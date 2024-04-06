@@ -1,4 +1,5 @@
 
+//arreglo en el que se va almacenar los medicos del json
 let listaMedicos = [];
 //FUNCTIONS
 // Función para cargar y procesar el archivo JSON
@@ -28,18 +29,20 @@ async function cargarJSON() {
 // Llamar a la función para cargar y procesar el archivo JSON
 cargarJSON();
 
+//guardar los pacientes en el local storage
 function guardarStorage(pacientes) {
   const arregloString = JSON.stringify(pacientes);
   localStorage.setItem('pacientesGuardados', arregloString);
 }
 
+//Obtener los pacientes del local storage
 function extraerStorage() {
   let arregloStringRecuperado = localStorage.getItem('pacientesGuardados');
   pacientes = JSON.parse(arregloStringRecuperado);
   return pacientes;
 }
 
-
+//se registra un paciente y se agrega al local storage
 function añadirPaciente(paciente) {
   let pacientesObtenidos = extraerStorage() || [];
   let cedulaExistente = pacientesObtenidos.some(p => p.cedula === paciente[0].cedula);
@@ -60,7 +63,7 @@ function añadirPaciente(paciente) {
   return false;
 }
 
-
+//funcion para cambiar la contraseña al paciente y se guarda al local storage
 function cambiarContraseniaPaciente(pacientecambio) {
   let pacientesObtenidos = extraerStorage() || [];
   let hecho = false;
@@ -80,6 +83,7 @@ function cambiarContraseniaPaciente(pacientecambio) {
   return hecho;
 }
 
+//funcion para obtener el correo de un paciente mediante su cedula
 function obtenerCorreoPaciente(cedula) {
   let pacientesObtenidos = extraerStorage() || [];
   let correo = "";
@@ -91,7 +95,7 @@ function obtenerCorreoPaciente(cedula) {
   return correo;
 }
 
-
+//funcion que se usa para autenticar a un paciente
 function buscarPacientePorCedulaYContraseña(cedulaBuscada, contraseniaBuscada) {
   let pacientes = extraerStorage();
   let medico = iniciarSesionMedico(cedulaBuscada, contraseniaBuscada);
@@ -118,18 +122,20 @@ function iniciarSesionMedico(cedulaBuscada, contraseniaBuscada) {
   return null;
 }
 
+//se guarda los datos del medico como una variable de sesion en el local storage
 function guardarSesionMedico(medico) {
   const arregloMedico = JSON.stringify(medico);
   localStorage.setItem('MedicoGuardado', arregloMedico);
 }
 
+//se extrae los datos del medico que se guardaron como variable de sesion.
 function extraerSesionMedico() {
   let arregloStringRecuperado = localStorage.getItem('MedicoGuardado');
   medico = JSON.parse(arregloStringRecuperado);
   return medico;
 }
 
-
+//se registra la cita y se guarda en el local storage.
 function añadirCita(cita) {
   let citasObtenidas = extraerStorageCitas() || [];
   let citaExistente = citasObtenidas.some(c => c.fecha === cita[0].fecha && c.hora === cita[0].hora);
@@ -148,11 +154,13 @@ function añadirCita(cita) {
   return false;
 }
 
+//se guarda los datos del paciente como una variable de sesion en el local storage
 function guardarInicioSesion(paciente) {
   const pacienteVerificado = JSON.stringify(paciente);
   localStorage.setItem('usuarioActivo', pacienteVerificado);
 }
 
+//se extrae los datos del paciente que se guardaron como variable de sesion
 function extraerInicioSesion() {
   let pacienteVerificado = localStorage.getItem('usuarioActivo');
   let paciente = JSON.parse(pacienteVerificado);
@@ -164,6 +172,7 @@ function guardarCitas(eventosArreglo) {
   localStorage.setItem("citas", JSON.stringify(eventosArreglo));
 }
 
+//obtenemos las citas guardadas en el local storage.
 function obtenerCitas() {
   let arregloStringRecuperado = localStorage.getItem('citas');
   let cita = JSON.parse(arregloStringRecuperado);
