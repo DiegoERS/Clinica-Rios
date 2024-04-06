@@ -1,5 +1,5 @@
 :root{
-    --color-primario: #b38add;
+    --color-primario: rgb(0,170,170);
 }
 
 
@@ -8,7 +8,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2e3242;
+    background-color: rgba(0, 170, 170, 0.14);
 }
 
 
@@ -23,7 +23,7 @@ main{
     color: #fff;
     display: flex;
     border-radius: 10px;
-    background-color: #373c4f;
+    background-color: rgba(0, 160, 160, 0.755);
 }
 
 .izquierda{
@@ -270,7 +270,7 @@ main{
 .fecha-hoy .fecha-evento{
     font-size: 1rem;
     font-weight: 400;
-    color: #878895;
+    color: #cdcdcf;
 }
 
 .eventos{

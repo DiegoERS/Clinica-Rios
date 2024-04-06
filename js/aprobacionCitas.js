@@ -190,7 +190,7 @@ const templateId = 'template_jz30u5a';
 const emailParams = {
   to_name: correo,
   from_name: 'Clínica arbol de seda',
-  message: 'El médico ha cofirmado tu cita.\n Este correo es un recordatorio de tu cita con el medico: '+medico.nombreCompleto+'. \n La cual fue solicitada para la fecha'+ fecha 
+  message: 'El médico ha cofirmado tu cita.\n Este correo es un recordatorio de tu cita con el medico: '+medico.nombreCompleto+'. \n La cual fue solicitada para la fecha: '+ fecha 
   +'. \n Y la hora establecida fue: ' + hora + ':00, \n!Esperamos tenga un buen dia!'
 };
 

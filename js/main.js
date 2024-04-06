@@ -130,17 +130,6 @@ function extraerSesionMedico() {
 }
 
 
-function guardarStorageCitas(citas) {
-  const arregloCitas = JSON.stringify(citas);
-  localStorage.setItem('citas', arregloCitas);
-}
-
-function extraerStorageCitas() {
-  let arregloStringRecuperado = localStorage.getItem('citas');
-  citas = JSON.parse(arregloStringRecuperado);
-  return citas;
-}
-
 function añadirCita(cita) {
   let citasObtenidas = extraerStorageCitas() || [];
   let citaExistente = citasObtenidas.some(c => c.fecha === cita[0].fecha && c.hora === cita[0].hora);
