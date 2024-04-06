@@ -1,0 +1,50 @@
+.nosotros_container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px;
+}
+
+
+
+.card{
+    padding: 30px;
+    margin-bottom: 60px;
+
+}
+.extra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.extra img{
+    margin: 20px;
+}
+
+.info_Empresa{
+    padding: 30px;
+}
+
+.card h2{
+    font-family: sans-serif;
+    color: rgb(0, 170, 170);
+    margin-bottom: 15px;
+}
+
+.card p{
+    color: #798dbb;
+}
+
+@media(max-width:750px){
+
+    .extra{
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .extra img{
+        margin: 0 20px;
+        width: 100%;
+    }
+}

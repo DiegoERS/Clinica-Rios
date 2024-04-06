@@ -9,6 +9,7 @@
     <title>Sobre nosotros</title><!--es para el nombre de la pestaña-->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/sobreNosotros.css">
     <!-- el rel para que sepa que es css al igual que el type, href para la ruta del archivo-->
     <!--para iconos-->
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
@@ -21,7 +22,9 @@
 
 <body>
     <header>
-        <h1><a href="index.html">Clínica Árbol de seda</a></h1> <!--titulos, h1,h2,h3,h4,h5,h6-->
+        <div class="contenedor_titulo_index">
+            <a href="index.html" class="titulo_index">Clínica Árbol de seda</a> <!--titulos, h1,h2,h3,h4,h5,h6-->
+        </div>
         <nav>
             <ul>
                 <li><a href="inicioSesion.html">Registro/Inicio de sesión</a></li>
@@ -41,21 +44,33 @@
         <div class="contenido_Sesion">
             <div class="nosotros_container">
 
-                <div class="card">
+                <div class="card extra">
                     <img src="img/clinica.jpg" alt="Imagen de la clínica">
-                    <h2>Información sobre la empresa</h2>
-                    <p>Somos la Clínica Árbol de Seda, una institución comprometida con la excelencia en atención médica y la comodidad de nuestros pacientes.</p>
-                  </div>
-                
-                  <div class="card">
+                    <div class="info_Empresa">
+                        <h2>Información sobre la empresa</h2>
+                        <p>Ofrecemos servicios médicos de alta calidad con un enfoque en la excelencia y la comodidad
+                            del paciente. Nuestro compromiso se refleja en cada aspecto de nuestra atención médica,
+                            desde la consulta hasta el seguimiento. Con un equipo de profesionales altamente capacitados
+                            y tecnología de vanguardia, nos dedicamos a mejorar la salud y el bienestar de nuestros
+                            pacientes. Confíe en nosotros para una atención médica excepcional y personalizada.</p>
+                    </div>
+                </div>
+
+                <div class="card">
                     <h2>Historia, misión, visión y valores</h2>
-                    <p>Nuestra clínica fue fundada en 2004 con la misión de proporcionar atención médica de calidad, centrada en el paciente y accesible para todos. Nuestra visión es ser líderes en innovación médica y mejorar la salud y el bienestar de nuestra comunidad. Nuestros valores fundamentales incluyen la integridad, el compromiso con la excelencia, la empatía y el trabajo en equipo.</p>
-                  </div>
-                
-                  <div class="card">
+                    <p>Nuestra clínica fue fundada en 2004 con la misión de proporcionar atención médica de calidad,
+                        centrada en el paciente y accesible para todos. Nuestra visión es ser líderes en innovación
+                        médica y mejorar la salud y el bienestar de nuestra comunidad. Nuestros valores fundamentales
+                        incluyen la integridad, el compromiso con la excelencia, la empatía y el trabajo en equipo.</p>
+                </div>
+
+                <div class="card">
                     <h2>Información sobre el equipo</h2>
-                    <p>Nuestro equipo está formado por profesionales altamente calificados, incluyendo médicos especialistas en diversas áreas de la medicina, desarrolladores de sistemas informáticos para garantizar un sistema de citas eficiente y otros profesionales comprometidos con brindar la mejor atención médica posible a nuestros pacientes.</p>
-                  </div>
+                    <p>Nuestro equipo está formado por profesionales altamente calificados, incluyendo médicos
+                        especialistas en diversas áreas de la medicina, desarrolladores de sistemas informáticos para
+                        garantizar un sistema de citas eficiente y otros profesionales comprometidos con brindar la
+                        mejor atención médica posible a nuestros pacientes.</p>
+                </div>
             </div>
         </div>
 
@@ -67,7 +82,9 @@
 
             <a href="preguntas.html">Preguntas frecuentes</a>
             <a href="contacto.html">Información de contacto</a>
-            <a href="js/Política de Privacidad clinica.pdf" download="Clinica Árbol de seda (Politica de privacidad y términos de uso).pdf">Politica de privacidad y términos de uso</a>
+            <a href="js/Política de Privacidad clinica.pdf"
+                download="Clinica Árbol de seda (Politica de privacidad y términos de uso).pdf">Politica de privacidad y
+                términos de uso</a>
 
 
         </div>

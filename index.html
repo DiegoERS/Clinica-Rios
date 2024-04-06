@@ -15,7 +15,10 @@
 <body>
 
     <header>
-        <h1 ><a href="index.html">Clínica Árbol de seda</a></h1> <!--titulos, h1,h2,h3,h4,h5,h6-->
+        <div class="contenedor_titulo_index">
+            <a href="index.html" class="titulo_index">Clínica Árbol de seda</a> <!--titulos, h1,h2,h3,h4,h5,h6-->
+        </div>
+
 
         <nav>
             <ul>
@@ -23,7 +26,7 @@
                 <li><a href="busqueda.html">Búsqueda de médicos</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="nosotros.html">Sobre nosotros</a></li>
-               
+
 
 
             </ul>
@@ -37,12 +40,20 @@
     <Main>
 
         <div class="contenido">
-
+            <div class="contenedor_titulo_paginaPrincipal">
+                <p>Bienvenido/a a la Clínica Árbol de Seda, donde la excelencia en atención médica se combina con la
+                    comodidad y accesibilidad para nuestros pacientes. Nuestro sistema de citas médicas está
+                    diseñado
+                    para ofrecerle una experiencia fluida y eficiente, permitiéndole gestionar sus consultas de
+                    manera
+                    sencilla y conveniente.</p>
+            </div>
             <div class="carrusel">
-                <button class="boton_izquierda botones" id="boton_izquierda"><i
-                        class="fa-solid fa-circle-left fa-2xl"></i></button>
-                <div class="imagenesCarrusel" id="carruseljs">
+                <button class="boton_izquierda botones" id="boton_izquierda">
+                    <i class="fa-solid fa-circle-left fa-2xl"></i>
+                </button>
 
+                <div class="imagenesCarrusel" id="carruseljs">
                     <img src="img/cardiologia.jpg" alt="">
                     <img src="img/dermatologia.jpeg" alt="">
                     <img src="img/ginecologia.jpg" alt="">
@@ -55,8 +66,9 @@
 
                 </div>
 
-                <button class="boton_derecha botones" id="boton_derecha"><i
-                        class="fa-solid fa-circle-right fa-2xl"></i></button>
+                <button class="boton_derecha botones" id="boton_derecha">
+                    <i class="fa-solid fa-circle-right fa-2xl"></i>
+                </button>
 
 
             </div>
@@ -64,12 +76,6 @@
 
                 <div class="resumen">
 
-                    <p>Bienvenido/a a la Clínica Árbol de Seda, donde la excelencia en atención médica se combina con la
-                        comodidad y accesibilidad para nuestros pacientes. Nuestro sistema de citas médicas está
-                        diseñado
-                        para ofrecerle una experiencia fluida y eficiente, permitiéndole gestionar sus consultas de
-                        manera
-                        sencilla y conveniente.</p>
                     <p>Con nuestro sistema, usted podrá:</p>
                     <h4>1.Agendar Citas con Facilidad:</h4>
                     <p>Seleccione la fecha y hora que más le convenga para su consulta
@@ -111,10 +117,12 @@
         <p>Más información sobre nosotros.</p>
 
         <div>
-            
+
             <a href="preguntas.html">Preguntas frecuentes</a>
             <a href="contacto.html">Información de contacto</a>
-            <a href="js/Política de Privacidad clinica.pdf" download="Clinica Árbol de seda (Politica de privacidad y términos de uso).pdf">Politica de privacidad y términos de uso</a>
+            <a href="js/Política de Privacidad clinica.pdf"
+                download="Clinica Árbol de seda (Politica de privacidad y términos de uso).pdf">Politica de privacidad y
+                términos de uso</a>
 
         </div>
 

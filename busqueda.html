@@ -22,7 +22,9 @@
 
 <body>
     <header>
-        <h1><a href="index.html">Clínica Árbol de seda</a></h1> <!--titulos, h1,h2,h3,h4,h5,h6-->
+        <div class="contenedor_titulo_index">
+            <a href="index.html" class="titulo_index">Clínica Árbol de seda</a> <!--titulos, h1,h2,h3,h4,h5,h6-->
+        </div>
         <nav>
             <ul>
                 <li><a href="inicioSesion.html">Registro/Inicio de sesión</a></li>
@@ -42,20 +44,22 @@
     <main>
         <div class="contenido_Sesion">
             <div class="contenedor_ordenar">
-                <p>Ordenar por:</p>
-                <select name="ordenamiento" id="ordenamiento">
-                    <option value="nombreCompleto">Nombre</option>
-                    <option value="especialidad">Especialidad</option>
-                    <option value="ubicacionConsulta">Ubicacion</option>
-                    <option value="" selected></option>
-                </select>
+
 
             </div>
             <div class="contenedor_input_general">
-                
+                <div class="contenedorOrden">
+                    <p>Ordenar por:</p>
+                    <select name="ordenamiento" id="ordenamiento">
+                        <option value="nombreCompleto">Nombre</option>
+                        <option value="especialidad">Especialidad</option>
+                        <option value="ubicacionConsulta">Ubicacion</option>
+                        <option value="" selected></option>
+                    </select>
+                </div>
                 <input type="text" class="Allselect" placeholder="Filtro general">
             </div>
-            
+
             <div class="contenedor_tabla">
                 <table class="table">
                     <thead>
@@ -71,10 +75,10 @@
                             <th><input type="text" class="select input-Nombre"></th>
                             <th><input type="text" class="select input-Especialidad"></th>
                             <th><input type="text" class="select input-ubicacion"></th>
-                            
-                            
-                            
-                            
+
+
+
+
                         </tr>
                     </thead>
                     <tbody class="cuerpoTabla">

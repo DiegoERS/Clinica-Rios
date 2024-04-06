@@ -1,0 +1,26 @@
+.secciones_Preguntas {
+    padding: 40px;
+    font-family: sans-serif;
+}
+
+.tituloPregunta {
+    
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(0, 170, 170);
+}
+
+.preguntas {
+    width: 90%;
+    max-width: 1000px;
+}
+
+.preguntas p{
+    margin-bottom: 30px;
+    color: #798dbb;
+}
+
+.preguntas h3{
+    margin-bottom: 10px;
+    color: rgb(0, 170, 170);
+}

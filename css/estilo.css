@@ -2,52 +2,79 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: sans-serif;
 
 }
 
-h1 {
-    text-align: center;
-    background-color: rgb(240, 240, 240);
-    padding: 1rem;
+.contenedor_titulo_index{
     width: 100%;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.contenedor_titulo_paginaPrincipal{
+   font-weight: 600;
+   font-size: 20px;
+   text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 50px;
+    color: #798dbb;
+}
+
+header .titulo_index {
+    text-align: center;
+    
+    
+    width: 100%;
+    font-weight: 600;
+    font-size: 40px;
+    color: rgb(0, 178, 178);
     text-decoration: none;
 
 }
-a{
-    text-decoration: none;
-}
+
 
 .contenido{
-   max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   width: 100%;
    margin-top: 50px;
+   padding: 0 20px;
 
 }
 
 .seccion {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     align-content: center;
+    align-items: center;
     
 }
 
 .resumen {
-    width: 55%;
-    height: 100%;
-    margin: 5rem 0;
-    padding-top: 10px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 15px;
     font-size: 1.3rem;
-    background-color: rgb(253, 253, 250);
     border-radius: 50px;
-    margin:0 1rem;
-
-    flex: 2;
+    color:#798dbb;
+    
 
 }
 
 
+
 .resumen p {
     padding: 10px;
+}
+
+.resumen p span {
+    color: rgb(0, 178, 178);
 }
 
 .tabla_aprobacion{
@@ -56,21 +83,15 @@ a{
 
 .container_corazon {
     display: flex;
-    flex: 1;
-
-    min-width: 250px;
-    width: 40%;
-    height: 50%;
+    width: 100%;
     padding: 0;
-    margin: 10px;
-    background-color: rgb(253, 253, 250);
-    border-radius: 50px;
+    justify-content: center;
 
 }
 
 .corazon {
     display: flex;
-    width: 90%;
+    width: 80%;
     font-size: 30em;
     color: red;
     justify-content: center;

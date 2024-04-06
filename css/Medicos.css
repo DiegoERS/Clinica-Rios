@@ -6,17 +6,31 @@
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
     padding: 20px;
+    
 }
 
 .Allselect{
-    margin-bottom: 40px;
     border-radius: 5px;
 
 }
+.contenedorOrden{
+
+    font-family: sans-serif;
+    color: #373c4f;
+    
+}
+
+.contenedorOrden select{
+    width: 200px;
+}
 
 .contenedor_input_general{
+    display: flex;
+   justify-content: space-between;
+    align-content: center;
+    align-items: center;
     width: 100%;
-    text-align: end;
+
 }
 
 .contenedor_ordenar{
@@ -29,15 +43,14 @@
     
 }
 
+
 .contenedor_tabla{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     border-radius: 20px;
     overflow-x: auto;
     padding: 20px;
-  
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -96,7 +109,7 @@ border: none;
     position: absolute;
     top: 31%;
     left: 50%;
-    width: 30%;
+    width: 300px;
     height: 100%;
     max-height: 0;
     overflow: hidden;
@@ -185,4 +198,22 @@ border: none;
     transform: scale(1.1);
     background-color: rgb(0, 178, 178);
     color: white;
+}
+
+@media(max-width: 500px){
+    .contenedor_input_general{
+        display: flex;
+        flex-direction: column;
+       justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contenedorOrden{
+        margin-bottom: 20px;
+        
+    }
+    
+
 }
